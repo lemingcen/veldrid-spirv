@@ -223,6 +223,7 @@ Compiler *GetCompiler(std::vector<uint32_t> spirvBytes, const CrossCompileInfo &
     {
         auto ret = new CompilerMSL(spirvBytes);
         CompilerMSL::Options opts = {};
+        opts.enable_decoration_binding = true;
         ret->set_msl_options(opts);
         CompilerGLSL::Options commonOpts;
         commonOpts.vertex.flip_vert_y = info.InvertY;
